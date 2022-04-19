@@ -17,9 +17,3 @@ apply from: 'module-specific-dependencies.gradle'
 tasks.named('test') {
 	useJUnitPlatform()
 }
-
-apply plugin: ExampleBuildPlugin
-
-greeting {
-	message = 'Project 1'
-}
