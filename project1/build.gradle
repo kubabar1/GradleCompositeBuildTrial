@@ -1,0 +1,19 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.6'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+apply from: file("${gradle.includedBuild('project2').projectDir}/module-specific-dependencies.gradle")
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
