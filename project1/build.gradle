@@ -1,19 +1,18 @@
 plugins {
 	id 'org.springframework.boot' version '2.6.6'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-	id 'java'
+	id 'java-platform'
 }
+
+javaPlatform.allowDependencies()
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
 }
 
-apply from: file("${gradle.includedBuild('project2').projectDir}/module-specific-dependencies.gradle")
-
-tasks.named('test') {
-	useJUnitPlatform()
+dependencies {
+	api platform('module-specific-dependencies:project2:HEAD-SNAPSHOT')
 }

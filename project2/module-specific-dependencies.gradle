@@ -1,8 +1,0 @@
-import com.example.project2.CompositeBuildUtils
-
-dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation CompositeBuildUtils.resolveProjectDependency(project, ':module1', 'com.examplemod2', 'module1', '0.0.1-SNAPSHOT')
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}

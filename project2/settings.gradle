@@ -1,3 +1,4 @@
 rootProject.name = 'project2'
 
 include ':module1'
+include ':module-specific-dependencies'
